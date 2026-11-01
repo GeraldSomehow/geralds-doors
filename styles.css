@@ -8,3 +8,10 @@ main{width:min(calc(100% - 48px),var(--gerald-max-width));max-width:none;margin-
 .card img{border-color:var(--gerald-card-line);border-radius:var(--gerald-card-radius)}
 .reader{max-width:min(calc(100% - 48px),1050px)}
 @media(max-width:700px){main{width:calc(100% - 24px);padding:18px 0}.hero{border-radius:12px}.reader{max-width:calc(100% - 24px)}.intro{padding:24px}}
+
+/* Align the Doors header and hero to the Home page's shared 90rem shell. */
+:root{--gerald-max-width:90rem}
+header{width:min(calc(100% - 2.5rem),var(--gerald-max-width));margin-inline:auto;padding:20px 0}
+main{width:min(calc(100% - 2.5rem),var(--gerald-max-width));padding:20px 0}
+.reader{width:min(calc(100% - 2.5rem),1050px)}
+@media(max-width:700px){header,main{width:calc(100% - 1.5rem)}.reader{width:calc(100% - 1.5rem)}}
