@@ -19,7 +19,7 @@ for ch in data["chapters"]:
  if cover!=pages[0]:raise ValueError("First reader image must be the cover")
  for path in set([cover]+pages):
   src=R/path
-  if src.is_absolute() or ".." in pathlib.PurePosixPath(path).parts or not src.is_file():raise ValueError("Invalid image path "+path)
+  if pathlib.PurePosixPath(path).is_absolute() or ".." in pathlib.PurePosixPath(path).parts or not src.is_file():raise ValueError("Invalid image path "+path)
   dest=D/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
  cards.append(f'<a class="card" href="/chapters/{e(slug)}/1/"><img src="/{e(cover)}" alt="{e(title)} cover"><strong>{e(title)}</strong></a>')
  for position,img in enumerate(pages,1):
