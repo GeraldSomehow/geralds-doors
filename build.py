@@ -5,7 +5,7 @@ D=R/"dist"
 HOME="https://home.geraldsomehow.workers.dev/"
 def e(v):return html.escape(str(v),quote=True)
 def shell(title,body):
- return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} · Gerald's Doors</title><link rel="stylesheet" href="/styles.css"></head><body><header><a class="brand" href="/">GERALD <span>/ DOORS</span></a><nav aria-label="Site navigation"><a href="{HOME}">Gerald Home</a><a href="https://webcomic.geraldsomehow.workers.dev/">Webcomic</a><a href="/" aria-current="page">Gerald’s Doors</a><a href="{HOME}about/">About</a></nav></header>{body}<footer><span>GERALD. BECAUSE CAT.</span><a href="/">Gerald's Doors</a><span>A Studio MidKnight production.</span></footer></body></html>'''
+ return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} · Gerald's Doors</title><link rel="stylesheet" href="/styles.css"></head><body><header><a class="brand" href="/">GERALD <span>/ DOORS</span></a><nav aria-label="Site navigation"><a href="{HOME}">Gerald Home</a><a href="/" aria-current="page">Gerald’s Doors</a><a href="{HOME}about/">About</a></nav></header>{body}<footer><span>GERALD. BECAUSE CAT.</span><a href="/">Gerald's Doors</a><span>A Studio MidKnight production.</span></footer></body></html>'''
 data=json.loads((R/"chapters.json").read_text())
 if D.exists():shutil.rmtree(D)
 D.mkdir()
