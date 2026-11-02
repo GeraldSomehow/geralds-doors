@@ -1,3 +1,20 @@
 {
-  "chapters": []
+  "chapters": [
+    {
+      "slug": "episode-one",
+      "title": "Episode One",
+      "cover": "chapters/episode-one/cover.webp",
+      "pages": [
+        "chapters/episode-one/cover.webp",
+        "chapters/episode-one/page-01.webp",
+        "chapters/episode-one/page-02.webp",
+        "chapters/episode-one/page-03.webp",
+        "chapters/episode-one/page-04.webp",
+        "chapters/episode-one/page-05.webp",
+        "chapters/episode-one/page-06.webp",
+        "chapters/episode-one/page-07.webp",
+        "chapters/episode-one/page-08.webp"
+      ]
+    }
+  ]
 }
