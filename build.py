@@ -21,7 +21,7 @@ for ch in data["chapters"]:
   src=R/path
   if pathlib.PurePosixPath(path).is_absolute() or ".." in pathlib.PurePosixPath(path).parts or not src.is_file():raise ValueError("Invalid image path "+path)
   dest=D/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
- cards.append(f'<a class="card" href="/chapters/{e(slug)}/1/"><img src="/{e(cover)}" alt="{e(title)} cover"><strong>{e(title)}</strong></a>')
+ cards.append(f'<article class="saga-card graphic-novel-card"><a href="/chapters/{e(slug)}/1/"><img src="/{e(cover)}" alt="{e(title)} cover" loading="lazy" decoding="async"><div><h3>{e(title)}</h3><p>{len(pages)-1}-page story</p></div></a></article>')
  for position,img in enumerate(pages,1):
   is_cover=position==1
   label="Cover" if is_cover else f"Page {position-1} of {len(pages)-1}"
@@ -32,6 +32,6 @@ for ch in data["chapters"]:
   body=f'<main class="reader"><p><a href="/">← All chapters</a> · {e(title)} · {e(label)}</p><img src="/{e(img)}" alt="{e(alt)}"><div class="paging"><a href="{prev}">← Previous</a><a href="{nxt}">{next_label}</a></div></main>'
   target=D/"chapters"/slug/str(position);target.mkdir(parents=True,exist_ok=True);(target/"index.html").write_text(shell(title,body))
 gallery="".join(cards) or '<p class="empty">Chapter previews will appear here when the first installment is ready.</p>'
-body=f'<main><section class="hero"><img src="/assets/doors-header.webp" alt="Gerald’s Doors illustrated header"><div class="intro"><p class="eyebrow">A Gerald miniseries</p><h1>Gerald’s Doors</h1><p>Every door leads somewhere. Gerald has a habit of finding the wrong one.</p></div></section><section class="collection"><p class="eyebrow">Choose a door</p><h2>Chapters</h2><p>Select a title page to begin reading.</p><div class="gallery">{gallery}</div></section></main>'
+body=f'<main><section class="hero"><img src="/assets/doors-header.webp" alt="Gerald’s Doors illustrated header"><div class="intro"><p class="eyebrow">A Gerald miniseries</p><h1>Gerald’s Doors</h1><p>Every door leads somewhere. Gerald has a habit of finding the wrong one.</p></div></section><section class="collection archive-collection"><p class="eyebrow">Choose a door</p><h2>Chapters</h2><p>Select a title page to begin reading.</p><div class="saga-grid graphic-novel-grid">{gallery}</div></section></main>'
 (D/"index.html").write_text(shell("Home",body))
 print("Built",len(data["chapters"]),"chapters")
