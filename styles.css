@@ -15,3 +15,65 @@ header{width:min(calc(100% - 2.5rem),var(--gerald-max-width));margin-inline:auto
 main{width:min(calc(100% - 2.5rem),var(--gerald-max-width));padding:20px 0}
 .reader{width:min(calc(100% - 2.5rem),1050px)}
 @media(max-width:700px){header,main{width:calc(100% - 1.5rem)}.reader{width:calc(100% - 1.5rem)}}
+
+
+/* Chapter archive: compact, clickable cards, never full-size comic pages. */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+  margin-top: 28px;
+}
+.gallery .card {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 1px solid #383047;
+  border-radius: 16px;
+  background: #17121f;
+  color: #f6f2fa;
+  text-decoration: none;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.gallery .card > img {
+  display: block;
+  width: 104px;
+  height: 146px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid #4b3c55;
+  border-radius: 8px;
+}
+.gallery .card strong {
+  display: block;
+  min-width: 0;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.25;
+}
+.gallery .card strong::after {
+  content: "Read from Cover →";
+  display: block;
+  margin-top: 12px;
+  color: #c4ff3e;
+  font-size: 14px;
+  font-weight: 750;
+}
+.gallery .card:hover,
+.gallery .card:focus-visible {
+  background: #21192d;
+  border-color: #c4ff3e;
+}
+.gallery .card:focus-visible { outline: 2px solid #c4ff3e; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .gallery { gap: 12px; margin-top: 20px; }
+  .gallery .card { grid-template-columns: 82px minmax(0, 1fr); gap: 12px; padding: 10px; }
+  .gallery .card > img { width: 82px; height: 115px; }
+  .gallery .card strong { font-size: 19px; }
+  .gallery .card strong::after { font-size: 13px; margin-top: 9px; }
+}
