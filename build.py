@@ -28,8 +28,9 @@ for ch in data["chapters"]:
   prev=f"/chapters/{slug}/{position-1}/" if position>1 else "/"
   nxt=f"/chapters/{slug}/{position+1}/" if position<len(pages) else "/"
   next_label="Next page →" if position<len(pages) else "Back to Gerald's Doors →"
+  prev_control='<span aria-hidden="true"></span>' if is_cover else f'<a href="{prev}">← Previous</a>'
   alt=f"{title}, cover" if is_cover else f"{title}, page {position-1}"
-  body=f'<main class="reader"><p><a href="/">← All chapters</a> · {e(title)} · {e(label)}</p><img src="/{e(img)}" alt="{e(alt)}"><div class="paging"><a href="{prev}">← Previous</a><a href="{nxt}">{next_label}</a></div></main>'
+  body=f'<main class="reader"><p><a href="/">← All chapters</a> · {e(title)} · {e(label)}</p><img src="/{e(img)}" alt="{e(alt)}"><div class="paging">{prev_control}<a href="{nxt}">{next_label}</a></div></main>'
   target=D/"chapters"/slug/str(position);target.mkdir(parents=True,exist_ok=True);(target/"index.html").write_text(shell(title,body))
 gallery="".join(cards) or '<p class="empty">Chapter previews will appear here when the first installment is ready.</p>'
 body=f'<main><section class="hero"><img src="/assets/doors-header.webp" alt="Gerald’s Doors illustrated header"><div class="intro"><p class="eyebrow">A Gerald miniseries</p><h1>Gerald’s Doors</h1><p>Every door leads somewhere. Gerald has a habit of finding the wrong one.</p></div></section><section class="collection archive-collection"><p class="eyebrow">Choose a door</p><h2>Chapters</h2><p>Select a title page to begin reading.</p><div class="saga-grid graphic-novel-grid">{gallery}</div></section></main>'
