@@ -15,6 +15,18 @@
         "chapters/episode-one/page-07.webp",
         "chapters/episode-one/page-08.webp"
       ]
+    },
+    {
+      "slug": "black-cherry-incident",
+      "title": "The Black Cherry Incident",
+      "cover": "chapters/black-cherry-incident/cover.webp",
+      "pages": [
+        "chapters/black-cherry-incident/cover.webp",
+        "chapters/black-cherry-incident/page-01.webp",
+        "chapters/black-cherry-incident/page-02.webp",
+        "chapters/black-cherry-incident/page-03.webp",
+        "chapters/black-cherry-incident/page-04.webp"
+      ]
     }
   ]
 }
