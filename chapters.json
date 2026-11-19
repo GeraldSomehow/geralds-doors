@@ -27,6 +27,20 @@
         "chapters/black-cherry-incident/page-03.webp",
         "chapters/black-cherry-incident/page-04.webp"
       ]
+    },
+    {
+      "slug": "the-impossible-address",
+      "title": "The Impossible Address",
+      "cover": "chapters/the-impossible-address/cover.webp",
+      "pages": [
+        "chapters/the-impossible-address/cover.webp",
+        "chapters/the-impossible-address/page-01.webp",
+        "chapters/the-impossible-address/page-02.webp",
+        "chapters/the-impossible-address/page-03.webp",
+        "chapters/the-impossible-address/page-04.webp",
+        "chapters/the-impossible-address/page-05.webp",
+        "chapters/the-impossible-address/page-06.webp"
+      ]
     }
   ]
 }
